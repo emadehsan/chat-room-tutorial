@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat Room</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.slim.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/master.css">
+</head>
+<body>
+
+<div class="chat" id="app">
+
+	<div class="chat-history">
+		<div v-for="m in messages">
+			<h3>{{ m.by }}</h3>
+			<p>{{ m.text }}</p>
+		</div>
+	</div>
+
+	<div id="send">
+		<input id="msg" v-model="msg"  autocomplete="off"/>
+		<button v-on:click="send"> Send</button>
+	</div>
+
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script type="text/javascript" src="js/master.js"></script>
+
+</body>
+</html>
